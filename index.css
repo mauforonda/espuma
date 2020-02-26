@@ -1,0 +1,46 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  width: 100vw;
+}
+
+#map {
+  height: 90%;
+  width: 100vw;
+}
+
+.day {
+  background-color: #ffe5c9;
+  animation: sunrise 10s;
+}
+
+.night {
+  background-color: #304993;
+  animation: sunset 10s;
+}
+
+#time {
+  color: #555;
+  background: #ffffff;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 40px;
+  height: auto;
+  border-bottom: 1px solid #363c3638;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.95);
+  font-family: arial,sans-serif;
+  z-index: -1;
+}
+
+@keyframes sunrise {
+  from {background-color: #304993;}
+  to {background-color: #ffe5c9;}
+}
+
+@keyframes sunset {
+  from {background-color: #ffe5c9;}
+  to {background-color: #304993;}
+}

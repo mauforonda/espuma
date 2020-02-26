@@ -1,0 +1,8 @@
+[[./screen.gif]]
+
+Un día de movimientos de los buses de La Paz Bus.
+Visualización de los datos publicados en [[https://github.com/mauforonda/pumiercoles][este repositorio]]. 
+
+
+
+
