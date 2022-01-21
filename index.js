@@ -3,24 +3,29 @@ let minute;
 let data;
 let overlay;
 let now = 1;
+
 const time = document.getElementById('time');
 const mapDiv = document.getElementById('map')
 
+document.body.classList.remove("preload");
+
 const punto = new ol.style.Style({
   image: new ol.style.Circle({
-    radius: 5,
-    fill: new ol.style.Fill({color: '#ffe30d'}),
-    stroke: new ol.style.Stroke({color: '#f0a80c', width: 1})
+    radius: 3,
+    fill: new ol.style.Fill({color: 'rgba(88, 115, 232, 0.2)'}),
+    stroke: new ol.style.Stroke({color: '#5873e8', width: 1})
   })
 });
 
 function ciudad(){
   
-  const lapaz = [-68.123, -16.504];
+  const lapaz = [ -68.09862408447266, -16.500910095214845 ];
   
   const layer = new ol.layer.Tile({
-    source: new ol.source.OSM(),
-    opacity: 0.7
+    source: new ol.source.XYZ({ 
+      url:'http://{1-4}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+    }),
+    opacity: 0.9
   });
 
   const view = new ol.View({
@@ -44,11 +49,11 @@ function mover(now) {
     time.textContent = data[now][0];
     now++;
     if (now == data.length) {now = 0};
-    if (data[now][0] == "06:00") {mapDiv.classList = "day"};
-    if (data[now][0] == "19:00") {mapDiv.classList = "night"};
+    if (data[now][0] == "06:00") {mapDiv.classList = "day"; time.classList = "timeday"};
+    if (data[now][0] == "19:00") {mapDiv.classList = "night"; time.classList = "timenight"};
     mover(now);
     
-  }, 100);
+  }, 80);
 };
 
 

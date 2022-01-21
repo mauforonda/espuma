@@ -5,42 +5,71 @@ body {
 html, body {
   height: 100%;
   width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
+.preload {
+  transition:none !important;
+ }
+
 #map {
-  height: 90%;
+  height: 100%;
   width: 100vw;
+  position: absolute;
 }
 
 .day {
-  background-color: #ffe5c9;
+  background-color: #faf3eb4a;
   animation: sunrise 10s;
 }
 
 .night {
-  background-color: #304993;
+  background-color: #6a6d75;
   animation: sunset 10s;
 }
 
+.timeday {
+  color: #5d6a8b;
+  animation: timesunrise 10s;
+}
+
+.timenight {
+  color: #fff;
+  animation: timesunset 10s;
+}
+
 #time {
-  color: #555;
-  background: #ffffff;
-  text-align: center;
-  padding: 15px 20px;
-  font-size: 40px;
-  height: auto;
-  border-bottom: 1px solid #363c3638;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.95);
-  font-family: arial,sans-serif;
-  z-index: -1;
+	text-align: center;
+	padding: 15px 20px;
+	font-size: 30px;
+	height: auto;
+	font-family: arial,sans-serif;
+	margin-top: 0;
+	margin-bottom: auto;
+	z-index: 1;
+	width: 100%;
+  position: absolute;
+  background: rgb(106, 109, 117, .05);
+  font-family: mono
 }
 
 @keyframes sunrise {
-  from {background-color: #304993;}
-  to {background-color: #ffe5c9;}
+  from {background-color: #6a6d75;}
+  to {background-color: #faf3eb4a;}
+}
+
+@keyframes timesunrise {
+  to {color: #5d6a8b;}
+  from {color: #fff;}
 }
 
 @keyframes sunset {
-  from {background-color: #ffe5c9;}
-  to {background-color: #304993;}
+  from {background-color: #faf3eb4a;}
+  to {background-color: #6a6d75;}
+}
+
+@keyframes timesunset {
+  to {color: #fff;}
+  from {color: #5d6a8b;}
 }
